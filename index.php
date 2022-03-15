@@ -53,7 +53,7 @@ $underground->origine($film1["country"], $film1["language"]);
 
 echo "<strong>Titolo:</strong> $underground->titolo <br>";
 
-print($underground->$cast);
+var_dump($underground->$cast);
 
 /* foreach($underground->$generi as $genere){
     echo "<strong>Titolo:</strong> $genere <br>";
