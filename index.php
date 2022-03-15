@@ -25,21 +25,8 @@ class Movie {
     public function origine($paese, $lingua) {
         $this->paeseDiProduzione = $paese;
         $this->linguaOriginale = $lingua;
-        return "Prodotto in " . $this->paeseDiProduzione . " e recitato in " . $this->linguaOriginale;
+        return "Prodotto in " . $this->paeseDiProduzione . " e recitato in " . strtolower($this->linguaOriginale);
     }
-
-    /* public function stampaGeneri(){
-
-        echo "<strong>Generi:</strong>";
-
-        for ($i=0; $i<count($this->film["Underground"]["genre"]); $i++){
-
-            echo $i;
-        
-        }
-
-        echo "<br>";
-    } */
 }
 
 //definisco le variabili da cui creo il percorso per i film
