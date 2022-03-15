@@ -33,12 +33,6 @@ class Movie {
 $film1 = $film['Underground'];
 $film2 = $film['Film d\'amore e d\'anarchia'];
 
-/* for ($i=0; $i<count($film); $i++){
-
-    $underground = new Movie($film[$i]["title"]);
-
-} */
-
 //prendo il nome del titolo definito nell'array ricercato nel database
 $underground = new Movie($film1["title"], $film1["genre"], $film1["cast"]);
 
@@ -51,20 +45,22 @@ $underground->durata = $film1["movie_length"];
 $underground->punteggio = $film1["rating"];
 $underground->origine($film1["country"], $film1["language"]);
 
+//stampo a schermo i valori
 echo "<strong>Titolo:</strong> $underground->titolo <br>";
-
-var_dump($underground->$cast);
-
-/* foreach($underground->$generi as $genere){
-    echo "<strong>Titolo:</strong> $genere <br>";
+foreach($underground->generi as $genere){
+    echo "<strong>Generi:</strong> $genere <br>";
 }
-
-foreach($underground->$attori as $attore){
-    echo "<strong>Titolo:</strong> $attore <br>";
-} */
-
+foreach($underground->attori as $attore){
+    echo "<strong>Attori:</strong> $attore <br>";
+}
 echo "<strong>Regista:</strong> $underground->regista <br>";
 echo "<strong>Anno di produzione:</strong> $underground->annoProduzione <br>";
 echo "<strong>Durata del film:</strong> $underground->durata <br>";
 echo "<strong>Punteggio (da 0 a 10):</strong> $underground->punteggio <br>";
 echo "<strong>Produzione:</strong> {$underground->origine($film1["country"], $film1["language"])} <br>";
+
+/* for ($i=0; $i<count($film); $i++){
+
+    $underground = new Movie($film[$i]["title"]);
+
+} */
