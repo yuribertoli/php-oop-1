@@ -60,16 +60,33 @@ $underground->origine($film1["country"], $film1["language"]);
 
 //stampo a schermo i valori
 echo "<strong>Titolo:</strong> $underground->titolo <br>";
+
+/* ciclo i valori di generi e aggiungo la virgola solo se l'elemento ciclato non è l'ultimo */
 echo "<strong>Generi: </strong>";
+$i=0;
 foreach($underground->generi as $key => $genere){
-    echo $genere . ", ";
+    $i++;
+    if($i < count($underground->generi)){
+        echo $genere . ", ";
+    } else {
+        echo $genere;
+    }
 }
 echo "<br>";
+
+/* ripeto la stessa operazione per attori */
 echo "<strong>Attori: </strong>";
-foreach($underground->attori as $key => $attore){
-    echo $attore . ", ";
+$i=0;
+foreach($underground->attori as $key => $genere){
+    $i++;
+    if($i < count($underground->attori)){
+        echo $genere . ", ";
+    } else {
+        echo $genere;
+    }
 }
 echo "<br>";
+
 echo "<strong>Regista:</strong> $underground->regista <br>";
 echo "<strong>Anno di produzione:</strong> $underground->annoProduzione <br>";
 echo "<strong>Durata del film:</strong> $underground->durata <br>";
@@ -95,16 +112,33 @@ $anarchia->origine($film2["country"], $film2["language"]);
 
 //stampo a schermo i valori
 echo "<strong>Titolo:</strong> $anarchia->titolo <br>";
+
+/* ciclo i valori di generi e aggiungo la virgola solo se l'elemento ciclato non è l'ultimo */
 echo "<strong>Generi: </strong>";
+$i=0;
 foreach($anarchia->generi as $key => $genere){
-    echo $genere . ", ";
+    $i++;
+    if($i < count($anarchia->generi)){
+        echo $genere . ", ";
+    } else {
+        echo $genere;
+    }
 }
 echo "<br>";
+
+/* ripeto la stessa operazione per attori */
 echo "<strong>Attori: </strong>";
-foreach($anarchia->attori as $key => $attore){
-    echo $attore . ", ";
+$i=0;
+foreach($anarchia->attori as $key => $genere){
+    $i++;
+    if($i < count($anarchia->attori)){
+        echo $genere . ", ";
+    } else {
+        echo $genere;
+    }
 }
 echo "<br>";
+
 echo "<strong>Regista:</strong> $anarchia->regista <br>";
 echo "<strong>Anno di produzione:</strong> $anarchia->annoProduzione <br>";
 echo "<strong>Durata del film:</strong> $anarchia->durata <br>";
