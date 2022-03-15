@@ -27,6 +27,19 @@ class Movie {
         $this->linguaOriginale = $lingua;
         return "Prodotto in " . $this->paeseDiProduzione . " e recitato in " . $this->linguaOriginale;
     }
+
+    /* public function stampaGeneri(){
+
+        echo "<strong>Generi:</strong>";
+
+        for ($i=0; $i<count($this->film["Underground"]["genre"]); $i++){
+
+            echo $i;
+        
+        }
+
+        echo "<br>";
+    } */
 }
 
 //definisco le variabili da cui creo il percorso per i film
@@ -47,12 +60,16 @@ $underground->origine($film1["country"], $film1["language"]);
 
 //stampo a schermo i valori
 echo "<strong>Titolo:</strong> $underground->titolo <br>";
-foreach($underground->generi as $genere){
-    echo "<strong>Generi:</strong> $genere <br>";
+echo "<strong>Generi: </strong>";
+foreach($underground->generi as $key => $genere){
+    echo $genere . ", ";
 }
-foreach($underground->attori as $attore){
-    echo "<strong>Attori:</strong> $attore <br>";
+echo "<br>";
+echo "<strong>Attori: </strong>";
+foreach($underground->attori as $key => $attore){
+    echo $attore . ", ";
 }
+echo "<br>";
 echo "<strong>Regista:</strong> $underground->regista <br>";
 echo "<strong>Anno di produzione:</strong> $underground->annoProduzione <br>";
 echo "<strong>Durata del film:</strong> $underground->durata <br>";
@@ -78,20 +95,18 @@ $anarchia->origine($film2["country"], $film2["language"]);
 
 //stampo a schermo i valori
 echo "<strong>Titolo:</strong> $anarchia->titolo <br>";
-foreach($anarchia->generi as $genere){
-    echo "<strong>Generi:</strong> $genere <br>";
+echo "<strong>Generi: </strong>";
+foreach($anarchia->generi as $key => $genere){
+    echo $genere . ", ";
 }
-foreach($anarchia->attori as $attore){
-    echo "<strong>Attori:</strong> $attore <br>";
+echo "<br>";
+echo "<strong>Attori: </strong>";
+foreach($anarchia->attori as $key => $attore){
+    echo $attore . ", ";
 }
+echo "<br>";
 echo "<strong>Regista:</strong> $anarchia->regista <br>";
 echo "<strong>Anno di produzione:</strong> $anarchia->annoProduzione <br>";
 echo "<strong>Durata del film:</strong> $anarchia->durata <br>";
 echo "<strong>Punteggio (da 0 a 10):</strong> $anarchia->punteggio <br>";
 echo "<strong>Produzione:</strong> {$anarchia->origine($film2["country"], $film2["language"])} <br>";
-
-/* for ($i=0; $i<count($film); $i++){
-
-    $underground = new Movie($film[$i]["title"]);
-
-} */
