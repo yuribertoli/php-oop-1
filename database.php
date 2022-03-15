@@ -14,7 +14,7 @@
                             ],
         'Film d\'amore e d\'anarchia' =>    [
                                                 'title' => "Film d\'amore e d\'anarchia",
-                                                'genre' => "Drammatico",
+                                                'genre' => ["Drammatico"],
                                                 'cast' => ["Giancarlo Giannini", "Mariangela Melato", "Eros Pagni", "Lina Polito"],
                                                 'director' => "Lina Wertmüller",
                                                 'year_of_production' => 1973,

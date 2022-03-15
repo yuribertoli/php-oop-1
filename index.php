@@ -57,7 +57,38 @@ echo "<strong>Regista:</strong> $underground->regista <br>";
 echo "<strong>Anno di produzione:</strong> $underground->annoProduzione <br>";
 echo "<strong>Durata del film:</strong> $underground->durata <br>";
 echo "<strong>Punteggio (da 0 a 10):</strong> $underground->punteggio <br>";
-echo "<strong>Produzione:</strong> {$underground->origine($film1["country"], $film1["language"])} <br>";
+echo "<strong>Produzione:</strong> {$underground->origine($film1["country"], $film1["language"])} <br><br><br>";
+
+
+
+
+
+
+//prendo il nome del titolo definito nell'array ricercato nel database
+$anarchia = new Movie($film2["title"], $film2["genre"], $film2["cast"]);
+
+//definisco le variabili
+$anarchia->generi = $film2["genre"];
+$anarchia->attori = $film2["cast"];
+$anarchia->regista = $film2["director"];
+$anarchia->annoProduzione = $film2["year_of_production"];
+$anarchia->durata = $film2["movie_length"];
+$anarchia->punteggio = $film2["rating"];
+$anarchia->origine($film2["country"], $film2["language"]);
+
+//stampo a schermo i valori
+echo "<strong>Titolo:</strong> $anarchia->titolo <br>";
+foreach($anarchia->generi as $genere){
+    echo "<strong>Generi:</strong> $genere <br>";
+}
+foreach($anarchia->attori as $attore){
+    echo "<strong>Attori:</strong> $attore <br>";
+}
+echo "<strong>Regista:</strong> $anarchia->regista <br>";
+echo "<strong>Anno di produzione:</strong> $anarchia->annoProduzione <br>";
+echo "<strong>Durata del film:</strong> $anarchia->durata <br>";
+echo "<strong>Punteggio (da 0 a 10):</strong> $anarchia->punteggio <br>";
+echo "<strong>Produzione:</strong> {$anarchia->origine($film2["country"], $film2["language"])} <br>";
 
 /* for ($i=0; $i<count($film); $i++){
 
