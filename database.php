@@ -13,7 +13,7 @@
                             'country' => "Yugoslavia"            
                             ],
         'Film d\'amore e d\'anarchia' =>    [
-                                                'title' => "Film d\'amore e d\'anarchia",
+                                                'title' => 'Film d\'amore e d\'anarchia',
                                                 'genre' => ["Drammatico"],
                                                 'cast' => ["Giancarlo Giannini", "Mariangela Melato", "Eros Pagni", "Lina Polito"],
                                                 'director' => "Lina Wertmüller",
