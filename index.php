@@ -54,7 +54,7 @@ foreach($film as $key => $value){
     echo "<strong>Anno di produzione:</strong> $nome_array->annoProduzione <br>";
     echo "<strong>Durata del film:</strong> $nome_array->durata <br>";
     echo "<strong>Punteggio (da 0 a 10):</strong> $nome_array->punteggio <br>";
-    echo "<strong>Produzione:</strong> {$nome_array->origine($value["country"], $value["language"])} <br><br><br>";
+    echo "<strong>Produzione:</strong> {$nome_array->origine($value["country"], $value["language"])} <br>";
 
     /* ciclo i valori di generi e aggiungo la virgola solo se l'elemento ciclato non è l'ultimo */
     echo "<strong>Generi: </strong>";
@@ -80,7 +80,7 @@ foreach($film as $key => $value){
             echo $genere;
         }
     }
-    echo "<br>";
+    echo "<br><br><br>";
 }
 
 
