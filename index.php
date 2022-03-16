@@ -29,20 +29,32 @@ class Movie {
     }
 }
 
+//prendo ogni array che definisce un singolo film
 foreach($film as $key => $value){
 
+    //utilizzo la sua chiave per determinarne il nome che andro' poi ad utilizzare
+    //per inizializzare il nuovo oggetto (che accetterà 3 valori in entrata: title, genre e cast)
     $nome_array = "$".$key;
     $nome_array = new Movie($value["title"], $value["genre"], $value["cast"]);
+
+    //definisco le restanti variabili
     $nome_array->generi = $value["genre"];
     $nome_array->attori = $value["cast"];
     $nome_array->regista = $value["director"];
     $nome_array->annoProduzione = $value["year_of_production"];
     $nome_array->durata = $value["movie_length"];
     $nome_array->punteggio = $value["rating"];
+
+    //utilizzo una funzione interna per creare una stringa composta da 2 variabili
     $nome_array->origine($value["country"], $value["language"]);
 
     //stampo a schermo i valori
     echo "<strong>Titolo:</strong> $nome_array->titolo <br>";
+    echo "<strong>Regista:</strong> $nome_array->regista <br>";
+    echo "<strong>Anno di produzione:</strong> $nome_array->annoProduzione <br>";
+    echo "<strong>Durata del film:</strong> $nome_array->durata <br>";
+    echo "<strong>Punteggio (da 0 a 10):</strong> $nome_array->punteggio <br>";
+    echo "<strong>Produzione:</strong> {$nome_array->origine($value["country"], $value["language"])} <br><br><br>";
 
     /* ciclo i valori di generi e aggiungo la virgola solo se l'elemento ciclato non è l'ultimo */
     echo "<strong>Generi: </strong>";
@@ -69,21 +81,13 @@ foreach($film as $key => $value){
         }
     }
     echo "<br>";
-
-    echo "<strong>Regista:</strong> $nome_array->regista <br>";
-    echo "<strong>Anno di produzione:</strong> $nome_array->annoProduzione <br>";
-    echo "<strong>Durata del film:</strong> $nome_array->durata <br>";
-    echo "<strong>Punteggio (da 0 a 10):</strong> $nome_array->punteggio <br>";
-    echo "<strong>Produzione:</strong> {$nome_array->origine($value["country"], $value["language"])} <br><br><br>";
-
 }
 
 
 
+/* ALTERNATIVA SENZA IL FOREACH, RICOPIANDO OGNI VOLTA I VALORI PER OGNI FILM */
 
 /* 
-
-
 //definisco le variabili da cui creo il percorso per i film
 $film1 = $film['Underground'];
 $film2 = $film['Film d\'amore e d\'anarchia'];
